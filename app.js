@@ -5,6 +5,9 @@ const pjs = require('./p.js');
 const app = express();
 const port = 3000;
 
+const cors = require('cors');
+app.use(cors());
+
 function getRPC(chain) {
   if (chain == "main") {
     RPC_URL = "http://207.148.17.86:7078/";
