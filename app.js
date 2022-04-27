@@ -96,8 +96,9 @@ app.get('/getDroidy', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+const server = app.listen(process.env.PORT || port, () => {
+  const port = server.address().port;
+  console.log('Running on port ${port}');
 });
 
 app.use(compression());
